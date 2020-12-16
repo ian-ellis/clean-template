@@ -1,4 +1,5 @@
 import com.github.ianellis.clean.Dependencies
+import com.github.ianellis.clean.Dependencies.implementations
 import com.github.ianellis.clean.Dependencies.testImplementations
 import com.github.ianellis.clean.Sdk
 
@@ -46,6 +47,9 @@ dependencies {
     implementation(Dependencies.AndroidX.appCompat)
 
     implementations(Dependencies.Network.Retrofit.all)
+
+    implementation(project(":data"))
+
     testImplementations(Dependencies.Test.Unit.all)
     testImplementation(Dependencies.Test.Android.archCore)
 

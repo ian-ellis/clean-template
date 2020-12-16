@@ -5,6 +5,7 @@
       <module name="Clean_Template.app" target="1.8" />
       <module name="Clean_Template.buildSrc" target="1.8" />
       <module name="CleanTemplate.app" target="1.8" />
+      <module name="CleanTemplate.app-framework" target="1.8" />
       <module name="CleanTemplate.buildSrc" target="1.8" />
       <module name="CleanTemplate.presentation" target="1.8" />
     </bytecodeTargetLevel>

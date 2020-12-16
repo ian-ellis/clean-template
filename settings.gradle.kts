@@ -1,4 +1,5 @@
 include(
+    ":domain",
     ":data",
     ":app"
 )

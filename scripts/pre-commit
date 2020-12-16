@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+export PATH=/usr/local/bin:$PATH
+echo 'Files changed'
+echo $(git diff --cached --name-only --diff-filter=d) | tr ' ' '\n'
+echo '...........................................................................'
+
+function filterKtFiles() {
+    local input=("$@")
+    local output=()
+    local length=${#input[@]}
+    for (( i=0; i<$length; i++ ));
+    do
+        if [[ $"${input[$i]}" == *.kt ]] || [[ $"${input[$i]}" == *.kts ]]
+        then
+            output+=("${input[$i]}")
+        fi
+    done
+    echo "${output[*]}"
+}
+
+changedFiles=`echo $(git diff --cached --name-only --diff-filter=d) | sed "s/ /,/g"`
+changedFilesArray=()
+IFS=',' read -r -a changedFilesArray <<< "$changedFiles"
+
+ktFiles=($(filterKtFiles ${changedFilesArray[*]}))
+numKtFiles=${#ktFiles[@]}
+
+if [[ numKtFiles -gt 0 ]]
+then
+    ktFilesCommaSeparated=$(echo "${ktFiles[*]}" | sed "s/ /,/g")
+    echo "Runing Detekt as githook on $numKtFiles kt files"
+    ./gradlew detekt -Pinput="${ktFilesCommaSeparated}"
+else
+    echo 'No Kt file changed, skipping detekt'
+    exit 0
+fi

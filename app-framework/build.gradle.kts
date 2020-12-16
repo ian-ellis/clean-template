@@ -45,6 +45,7 @@ dependencies {
     implementation(Dependencies.AndroidX.core)
     implementation(Dependencies.AndroidX.appCompat)
 
+    implementations(Dependencies.Network.Retrofit.all)
     testImplementations(Dependencies.Test.Unit.all)
     testImplementation(Dependencies.Test.Android.archCore)
 

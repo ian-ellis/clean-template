@@ -1,0 +1,31 @@
+import com.github.ianellis.clean.Tools
+configurations {
+    detekt
+}
+
+task detekt(type: JavaExec) {
+    main = "io.gitlab.arturbosch.detekt.cli.Main"
+    classpath = configurations.detekt
+    def input = getInput() ?: "$projectDir"
+    def config = "detekt/detekt-config.yml"
+    def baseline = "detekt/baseline.xml"
+    def filters = '.*/build/.*'
+    def params = [
+            '-i', input,
+            '-c', config,
+            '-ex', filters,
+            '-b', baseline,
+            '-r', 'html:build/reports/detekt.html,xml:build/reports/detekt.xml,txt:build/reports/detekt.text',
+            '-ac',
+    ]
+    args(params)
+}
+
+def getInput() {
+    return project.getProperties().get("input")
+}
+
+dependencies {
+    detekt Tools.Detekt.cli
+    detekt Tools.Detekt.formatting
+}

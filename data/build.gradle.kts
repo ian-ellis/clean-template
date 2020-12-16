@@ -3,6 +3,7 @@ import com.github.ianellis.clean.Dependencies
 plugins {
     id("java-library")
     id("kotlin")
+    kotlin("kapt")
 }
 
 java {
@@ -11,6 +12,8 @@ java {
 }
 
 dependencies {
+    kapt(Dependencies.JsonParsing.Moshi.codegen)
+    implementation(Dependencies.JsonParsing.Moshi.moshi)
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.Kotlin.coroutines)
 }

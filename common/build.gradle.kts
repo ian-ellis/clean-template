@@ -27,4 +27,9 @@ configure<CoverageCheckConfig> {
     testCommand = "test"
     sourcePath = "src/main/java"
     classesPath = "$buildDir/classes/kotlin/main"
+    limits.apply {
+        instructions = 97.7f
+        branch = 93.7f
+        complexity = 95.0f
+    }
 }

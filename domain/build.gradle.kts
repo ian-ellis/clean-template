@@ -15,6 +15,8 @@ java {
 }
 
 dependencies {
+    implementation(project(":data"))
+
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.Kotlin.coroutines)
 
@@ -26,4 +28,7 @@ configure<CoverageCheckConfig> {
     testCommand = "test"
     sourcePath = "src/main/java"
     classesPath = "$buildDir/classes/kotlin/main"
+    excludes = listOf(
+        "**/CatFactSummary.class"
+    )
 }

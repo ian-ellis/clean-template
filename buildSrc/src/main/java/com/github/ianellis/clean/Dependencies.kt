@@ -8,10 +8,13 @@ private object Versions {
 
     // https://github.com/Kotlin/kotlinx.coroutines
     const val kotlinCoroutines = "1.4.1"
+
+    // https://developer.android.com/studio/releases/gradle-plugin
+    const val androidPlugin = "4.1.1"
 }
 
 object Plugins {
-    const val android = "com.android.tools.build:gradle:4.1.1"
+    const val android = "com.android.tools.build:gradle:${Versions.androidPlugin}"
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}"
 
     // https://docs.gradle.org/current/userguide/jacoco_plugin.html
@@ -19,6 +22,10 @@ object Plugins {
 }
 
 object Dependencies {
+
+    object AnnotationProcessors {
+        const val dataBinding = "androidx.databinding:databinding-compiler:${Versions.androidPlugin}"
+    }
 
     object Kotlin {
         const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"

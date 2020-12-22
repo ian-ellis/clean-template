@@ -3,10 +3,12 @@ import com.github.ianellis.clean.Dependencies.testImplementations
 import com.github.ianellis.clean.Sdk
 import com.github.ianellis.clean.plugins.CoverageCheckPlugin
 import com.github.ianellis.clean.plugins.CoverageCheckConfig
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 plugins {
     id("com.android.library")
     id("kotlin-android")
+    kotlin("kapt")
 }
 apply<CoverageCheckPlugin>()
 
@@ -40,9 +42,16 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
+
+    kapt(Dependencies.AnnotationProcessors.dataBinding)
+    kaptAndroidTest(Dependencies.AnnotationProcessors.dataBinding)
 
     implementation(project(":domain"))
     implementation(project(":common"))

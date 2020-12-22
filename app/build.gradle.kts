@@ -5,6 +5,7 @@ import com.github.ianellis.clean.Sdk
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    kotlin("kapt")
 }
 
 android {
@@ -40,6 +41,8 @@ android {
 }
 
 dependencies {
+    kapt(Dependencies.AnnotationProcessors.dataBinding)
+    kaptAndroidTest(Dependencies.AnnotationProcessors.dataBinding)
 
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.core)

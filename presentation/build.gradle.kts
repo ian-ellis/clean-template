@@ -41,14 +41,19 @@ android {
 
 dependencies {
 
+    implementation(project(":domain"))
+    implementation(project(":common"))
+
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.core)
     implementation(Dependencies.AndroidX.appCompat)
     implementation(Dependencies.AndroidX.constraintLayout)
+    implementation(Dependencies.AndroidX.Lifecycle.viewModel)
     implementation(Dependencies.Google.material)
 
     testImplementations(Dependencies.Test.Unit.all)
     testImplementation(Dependencies.Test.Android.archCore)
+    testImplementation(project(":test-helpers-android"))
 
     androidTestImplementation(Dependencies.Test.Instrumented.testRunner)
     androidTestImplementation(Dependencies.Test.Instrumented.testRules)

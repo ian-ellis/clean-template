@@ -27,6 +27,10 @@ object Dependencies {
         const val dataBinding = "androidx.databinding:databinding-compiler:${Versions.androidPlugin}"
     }
 
+    object Javax {
+        const val inject = "javax.inject:javax.inject:1"
+    }
+
     object Kotlin {
         const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}"
         const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlinCoroutines}"

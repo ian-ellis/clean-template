@@ -122,6 +122,9 @@ object Dependencies {
         // https://developer.android.com/jetpack/androidx/releases/recyclerview
         const val recyclerView = "androidx.recyclerview:recyclerview:1.1.0"
 
+        // https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout
+        const val swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+
         object Lifecycle {
             // https://developer.android.com/jetpack/androidx/releases/lifecycle
             private const val version = "2.2.0"

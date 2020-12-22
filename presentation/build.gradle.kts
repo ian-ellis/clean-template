@@ -60,6 +60,8 @@ dependencies {
     implementation(Dependencies.AndroidX.core)
     implementation(Dependencies.AndroidX.appCompat)
     implementation(Dependencies.AndroidX.constraintLayout)
+    implementation(Dependencies.AndroidX.recyclerView)
+    implementation(Dependencies.AndroidX.swipeRefresh)
     implementation(Dependencies.AndroidX.Lifecycle.viewModel)
     implementation(Dependencies.Google.material)
 

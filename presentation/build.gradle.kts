@@ -56,6 +56,7 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":common"))
 
+    implementation(Dependencies.Javax.inject)
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.core)
     implementation(Dependencies.AndroidX.appCompat)

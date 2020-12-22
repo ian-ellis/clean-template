@@ -1,11 +1,14 @@
 import com.github.ianellis.clean.Dependencies
 import com.github.ianellis.clean.Dependencies.testImplementations
 import com.github.ianellis.clean.Sdk
+import com.github.ianellis.clean.plugins.CoverageCheckPlugin
+import com.github.ianellis.clean.plugins.CoverageCheckConfig
 
 plugins {
     id("com.android.library")
     id("kotlin-android")
 }
+apply<CoverageCheckPlugin>()
 
 android {
     compileSdkVersion(Sdk.compile)
@@ -59,4 +62,14 @@ dependencies {
     androidTestImplementation(Dependencies.Test.Instrumented.testRules)
     androidTestImplementation(Dependencies.Test.Instrumented.Espresso.core)
     androidTestImplementation(Dependencies.Test.Instrumented.kluent)
+}
+
+configure<CoverageCheckConfig>() {
+    testCommand = "testDebugUnitTest"
+    sourcePath = "src/main/java"
+    classesPath = "$buildDir/tmp/kotlin-classes/debug"
+    excludes = listOf(
+        "com/github/ianellis/clean/presentation/utils/navigator/ActivityLifecycleOwnerManager.class",
+        "com/github/ianellis/clean/presentation/utils/navigator/FragmentLifecycleOwnerManager.class"
+    )
 }

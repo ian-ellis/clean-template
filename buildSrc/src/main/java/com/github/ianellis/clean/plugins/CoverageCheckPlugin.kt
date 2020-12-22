@@ -6,7 +6,10 @@ import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.logging.Logger
+import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.task
+import org.gradle.testing.jacoco.plugins.JacocoPluginExtension
 import org.gradle.testing.jacoco.tasks.JacocoReport
 import kotlin.math.roundToInt
 
@@ -68,6 +71,10 @@ open class CoverageCheckPlugin : Plugin<Project> {
 
         val extension = target.extensions.create("coverageCheck", CoverageCheckConfig::class.java)
         val reportsPath = "${target.buildDir}/reports/jacoco"
+
+        target.extensions.configure(JacocoPluginExtension::class.java) {
+            toolVersion = "0.8.6"
+        }
 
         target.afterEvaluate {
             val coverage = target.task("coverage", JacocoReport::class, configure(extension, target, reportsPath))

@@ -1,4 +1,5 @@
 include(
+    ":app-presentation",
     ":test-helpers-android",
     ":common",
     ":app-framework",

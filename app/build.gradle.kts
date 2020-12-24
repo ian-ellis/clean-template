@@ -42,8 +42,11 @@ android {
 
 dependencies {
     kapt(Dependencies.AnnotationProcessors.dataBinding)
+    kapt(Dependencies.AnnotationProcessors.dagger)
     kaptAndroidTest(Dependencies.AnnotationProcessors.dataBinding)
 
+    implementation(Dependencies.DependencyInjection.daggerAndroid)
+    implementation(Dependencies.DependencyInjection.daggerAndroidSupport)
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.core)
     implementation(Dependencies.AndroidX.appCompat)

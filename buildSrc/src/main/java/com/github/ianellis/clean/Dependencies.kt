@@ -11,6 +11,9 @@ private object Versions {
 
     // https://developer.android.com/studio/releases/gradle-plugin
     const val androidPlugin = "4.1.1"
+
+    // https://github.com/google/dagger
+    const val dagger = "2.30.1"
 }
 
 object Plugins {
@@ -25,6 +28,14 @@ object Dependencies {
 
     object AnnotationProcessors {
         const val dataBinding = "androidx.databinding:databinding-compiler:${Versions.androidPlugin}"
+        const val dagger = "com.google.dagger:dagger-compiler:${Versions.dagger}"
+        const val daggerAndroid = "com.google.dagger:dagger-android-processor:${Versions.dagger}"
+    }
+
+    object DependencyInjection {
+        const val dagger = "com.google.dagger:dagger:${Versions.dagger}"
+        const val daggerAndroid = "com.google.dagger:dagger-android:${Versions.dagger}"
+        const val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Versions.dagger}"
     }
 
     object Javax {

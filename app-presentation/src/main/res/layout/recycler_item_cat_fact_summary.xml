@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="summary"
+            type="String"
+            />
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener"
+            />
+
+    </data>
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/CatFactSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{onClick}"
+        android:text="@{summary}"
+        tools:text="This is a fact about cats: they have 4 legs and a tail, what more  do you want"
+        />
+</layout>

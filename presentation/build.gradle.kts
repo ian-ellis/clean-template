@@ -50,12 +50,14 @@ android {
 
 dependencies {
 
+    kapt(Dependencies.AnnotationProcessors.dagger)
     kapt(Dependencies.AnnotationProcessors.dataBinding)
     kaptAndroidTest(Dependencies.AnnotationProcessors.dataBinding)
 
     implementation(project(":domain"))
     implementation(project(":common"))
 
+    implementation(Dependencies.DependencyInjection.daggerAndroid)
     implementation(Dependencies.Javax.inject)
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.core)

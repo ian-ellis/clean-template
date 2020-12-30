@@ -49,7 +49,7 @@ dependencies {
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.core)
     implementation(Dependencies.AndroidX.appCompat)
-
+    implementations(Dependencies.Network.OkHttp.all)
     implementations(Dependencies.Network.Retrofit.all)
 
     implementation(project(":data"))

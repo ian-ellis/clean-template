@@ -17,7 +17,9 @@ java {
 
 dependencies {
     kapt(Dependencies.JsonParsing.Moshi.codegen)
+    kapt(Dependencies.AnnotationProcessors.dagger)
 
+    implementation(Dependencies.DependencyInjection.dagger)
     testImplementations(Dependencies.Test.Unit.all)
 
     implementation(Dependencies.JsonParsing.Moshi.moshi)

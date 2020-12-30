@@ -18,7 +18,7 @@ class NetworkingModule {
 
     @Provides
     @Singleton
-    fun providesRetrofit(moshi:Moshi, okHttpClient: OkHttpClient): Retrofit {
+    fun providesRetrofit(moshi: Moshi, okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .client(okHttpClient)
@@ -28,7 +28,7 @@ class NetworkingModule {
 
     @Provides
     @Singleton
-    fun providesMoshi():Moshi {
+    fun providesMoshi(): Moshi {
         return Moshi.Builder()
             .build()
     }
@@ -39,6 +39,7 @@ class NetworkingModule {
         return Cache(application.cacheDir, CACHE_SIZE)
     }
 
+    @SuppressWarnings("MagicNumber")
     @Provides
     @Singleton
     fun provideDefaultOkHttpClient(cache: Cache): OkHttpClient {
@@ -53,8 +54,8 @@ class NetworkingModule {
             .build()
     }
 
-    private fun OkHttpClient.Builder.addLogging():OkHttpClient.Builder{
-        if(BuildConfig.DEBUG){
+    private fun OkHttpClient.Builder.addLogging(): OkHttpClient.Builder {
+        if (BuildConfig.DEBUG) {
             val interceptor = HttpLoggingInterceptor()
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
             this.addInterceptor(interceptor)
@@ -63,6 +64,6 @@ class NetworkingModule {
     }
 
     companion object {
-        private const val CACHE_SIZE = 10 * 1024 * 1024; // 10 MiB
+        private const val CACHE_SIZE = 10L * 1024L * 1024L // 10 MiB
     }
 }

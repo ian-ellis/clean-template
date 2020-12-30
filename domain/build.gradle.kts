@@ -6,6 +6,7 @@ import com.github.ianellis.clean.plugins.CoverageCheckConfig
 plugins {
     id("java-library")
     id("kotlin")
+    kotlin("kapt")
 }
 apply<CoverageCheckPlugin>()
 
@@ -15,8 +16,11 @@ java {
 }
 
 dependencies {
+    kapt(Dependencies.AnnotationProcessors.dagger)
+
     implementation(project(":data"))
 
+    implementation(Dependencies.DependencyInjection.dagger)
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.Kotlin.coroutines)
 

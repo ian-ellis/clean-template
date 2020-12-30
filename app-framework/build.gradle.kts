@@ -6,6 +6,7 @@ import com.github.ianellis.clean.Sdk
 plugins {
     id("com.android.library")
     id("kotlin-android")
+    kotlin("kapt")
 }
 
 android {
@@ -42,6 +43,9 @@ android {
 
 dependencies {
 
+    kapt(Dependencies.AnnotationProcessors.dagger)
+
+    implementation(Dependencies.DependencyInjection.daggerAndroid)
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.core)
     implementation(Dependencies.AndroidX.appCompat)

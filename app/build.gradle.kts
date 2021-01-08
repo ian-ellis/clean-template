@@ -49,6 +49,13 @@ dependencies {
     kapt(Dependencies.AnnotationProcessors.dagger)
     kaptAndroidTest(Dependencies.AnnotationProcessors.dataBinding)
 
+    implementation(project(":app-framework"))
+    implementation(project(":app-presentation"))
+    implementation(project(":presentation"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(project(":common"))
+
     implementation(Dependencies.DependencyInjection.daggerAndroid)
     implementation(Dependencies.DependencyInjection.daggerAndroidSupport)
     implementation(Dependencies.Kotlin.stdLib)

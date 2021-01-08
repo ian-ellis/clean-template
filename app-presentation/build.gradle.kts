@@ -52,7 +52,9 @@ dependencies {
 
     implementation(project(":presentation"))
     implementation(project(":common"))
+    implementation(project(":domain"))
 
+    implementation(Dependencies.DependencyInjection.daggerAndroid)
     implementation(Dependencies.Javax.inject)
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.core)

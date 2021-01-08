@@ -4,4 +4,8 @@
     package="com.ianellis.github.clean.apppresentation"
     >
 
+    <application>
+        <activity android:name=".catfacts.summaries.CatFactSummariesActivity" />
+    </application>
+
 </manifest>

@@ -7,7 +7,7 @@ import com.ianellis.github.clean.domain.common.catfacts.summary.GetCatFactSummar
 
 internal class SimpleCatFactSummariesViewModel(
     private val getCatFactSummaries: GetCatFactSummaries,
-    private val navigator: CatFactSummaryNavigator,
+    override val navigator: CatFactSummaryNavigator,
 ) : BaseViewModel(), CatFactSummariesViewModel {
 
     override val loading = mutableLiveData(false)

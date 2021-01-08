@@ -1,5 +1,5 @@
 import com.github.ianellis.clean.Dependencies
-import com.github.ianellis.clean.Dependencies.implementations
+import com.github.ianellis.clean.Dependencies.apis
 import com.github.ianellis.clean.Dependencies.testImplementations
 import com.github.ianellis.clean.Sdk
 
@@ -53,8 +53,9 @@ dependencies {
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.core)
     implementation(Dependencies.AndroidX.appCompat)
-    implementations(Dependencies.Network.OkHttp.all)
-    implementations(Dependencies.Network.Retrofit.all)
+    apis(Dependencies.Network.OkHttp.all)
+    apis(Dependencies.Network.Retrofit.all)
+    api(Dependencies.JsonParsing.Moshi.moshi)
 
     implementation(project(":data"))
 

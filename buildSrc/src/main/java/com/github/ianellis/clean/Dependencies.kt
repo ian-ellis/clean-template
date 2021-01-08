@@ -213,6 +213,10 @@ object Dependencies {
         add("implementation", it)
     }
 
+    fun DependencyHandler.`apis`(dependencyNotation: List<Any>) = dependencyNotation.forEach {
+        add("api", it)
+    }
+
     fun DependencyHandler.`testImplementations`(dependencyNotation: List<Any>) = dependencyNotation.forEach {
         add("testImplementation", it)
     }

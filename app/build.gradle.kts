@@ -47,6 +47,7 @@ android {
 dependencies {
     kapt(Dependencies.AnnotationProcessors.dataBinding)
     kapt(Dependencies.AnnotationProcessors.dagger)
+    kapt(Dependencies.AnnotationProcessors.daggerAndroid)
     kaptAndroidTest(Dependencies.AnnotationProcessors.dataBinding)
 
     implementation(project(":app-framework"))
